@@ -18,7 +18,7 @@
 
 - 整个文档完成后，运行工具:
 
-  ![pdboltMarkdown图片自动上传更新工具菜单截图](./images/pdbolt-markdown-upload-menu.jpg)
+  ![pdboltMarkdown图片自动上传更新工具菜单截图](./images/pdbolt-markdown-upload-menu.png)
 
 -  工具会自动将Markdown中引用的图片上传到七牛云并且自动更新Markdown文件为:
 
