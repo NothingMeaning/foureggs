@@ -1,5 +1,9 @@
 # 四知回--Markdown文件图片自动上传七牛云并更新文件
 
+##  最新验证
+
+- 2020-02-20 可用
+
 &#8195;&#8195;
 
 ​ 秉承再造一个轮子的一贯特色，重新造了一个自己用的轮子，用于自动将Markdown文件中的图片自动上传到七牛云并自动替换文件中的图片链接。
@@ -32,6 +36,20 @@
 
 ### 下载使用
 
-- 
+- 下载Release的压缩包，将文件解压到路径
+
+- 修改AddUploadMdtoContextMenu_pdbolt.reg中的路径为解压路径
+
+- 修改config.ini文件，填写云对应参数
+
+- 点击目标.md文件，执行'Upload to cloud'
+
+### 直接源代码使用
+
+- 代码为 1markdownuploader\markdown-upload-pic.py
+
+- 程序默认读取同目录下的config.ini文件
+
+- python 1markdownuploader\markdown-upload-pic.py -m d:\test\abc.md
 
 
