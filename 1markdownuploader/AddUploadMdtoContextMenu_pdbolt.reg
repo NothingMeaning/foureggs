@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+
+; Author: by 子午僧@PDBoLT
+; Site: www.docdoc.top
+
+[HKEY_CLASSES_ROOT\*\shell\MdUpload]
+@="Upload to cloud"
+
+[HKEY_CLASSES_ROOT\*\shell\MdUpload\command]
+@="\"D:\\\\your\\\\path\\\\test\\\\uploader\\\\release\\\\markdown-upload-pdbolt.exe\" \"-m %1\""
+
