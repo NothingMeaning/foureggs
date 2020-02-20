@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+; Author: by 子午僧@PDBoLT
+; Site: www.docdoc.top
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\PowerPoint\Options]
+"ExportBitmapResolution"=dword:0000012c

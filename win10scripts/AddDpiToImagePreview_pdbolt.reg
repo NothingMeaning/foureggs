@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+; Author: by 子午僧@PDBoLT
+; Site: www.docdoc.top
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpg]
+"PreviewDetails"="prop:System.Photo.DateTaken;System.Keywords;*System.Image.Dimensions;*System.Size;System.Image.BitDepth;System.Image.ColorSpace;System.Image.HorizontalResolution;System.Image.VerticalResolution;System.Title;System.Author;System.Comment;*System.OfflineAvailability;*System.OfflineStatus;System.Photo.CameraManufacturer;System.Photo.CameraModel;System.Subject;*System.Photo.FNumber;*System.Photo.ExposureTime;*System.Photo.ISOSpeed;*System.Photo.ExposureBias;*System.Photo.FocalLength;*System.Photo.MaxAperture;*System.Photo.MeteringMode;*System.Photo.SubjectDistance;*System.Photo.Flash;*System.Photo.FlashEnergy;*System.Photo.FocalLengthInFilm;*System.DateCreated;*System.DateModified;*System.SharedWith;*System.Photo.PeopleNames;System.Rating"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpeg]
+"PreviewDetails"="prop:System.Photo.DateTaken;System.Keywords;*System.Image.Dimensions;*System.Size;System.Image.BitDepth;System.Image.ColorSpace;System.Image.HorizontalResolution;System.Image.VerticalResolution;System.Title;System.Author;System.Comment;*System.OfflineAvailability;*System.OfflineStatus;System.Photo.CameraManufacturer;System.Photo.CameraModel;System.Subject;*System.Photo.FNumber;*System.Photo.ExposureTime;*System.Photo.ISOSpeed;*System.Photo.ExposureBias;*System.Photo.FocalLength;*System.Photo.MaxAperture;*System.Photo.MeteringMode;*System.Photo.SubjectDistance;*System.Photo.Flash;*System.Photo.FlashEnergy;*System.Photo.FocalLengthInFilm;*System.DateCreated;*System.DateModified;*System.SharedWith;*System.Photo.PeopleNames;System.Rating"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.png]
+"PreviewDetails"="prop:System.Photo.DateTaken;System.Keywords;*System.Image.Dimensions;*System.Size;System.Image.BitDepth;System.Image.ColorSpace;System.Image.HorizontalResolution;System.Image.VerticalResolution;System.Title;System.Author;System.Comment;*System.OfflineAvailability;*System.OfflineStatus;System.Photo.CameraManufacturer;System.Photo.CameraModel;System.Subject;*System.Photo.FNumber;*System.Photo.ExposureTime;*System.Photo.ISOSpeed;*System.Photo.ExposureBias;*System.Photo.FocalLength;*System.Photo.MaxAperture;*System.Photo.MeteringMode;*System.Photo.SubjectDistance;*System.Photo.Flash;*System.Photo.FlashEnergy;*System.Photo.FocalLengthInFilm;*System.DateCreated;*System.DateModified;*System.SharedWith;*System.Photo.PeopleNames;System.Rating"
