@@ -51,6 +51,9 @@ else:
 
 from datetime import datetime
 from shutil import copyfile
+import pypandoc
+
+os.environ.setdefault('PYPANDOC_PANDOC', 'C:\\Program Files\\Pandococ')
 
 # 
 # ak = '4bm7YaqUpRKnALOdWQkIVpZ_f3KH-uHL5SgV5MjH'
@@ -228,6 +231,13 @@ def md_img_find(md_file):
     print (' ignore  :%d' %(ignore))
 
 
+def convert_md_to_rtf(mdfile,rtf):
+  print('Markdown {} to RTF {}'.format(mdfile,rtf))
+  try:
+    output = pypandoc.convert_file(mdfile, 'rst', format='md')
+  
+
+
 def find_md(folder):
     '''
     在给定的目录下寻找md文件  
@@ -253,10 +263,11 @@ MdFiles=''
 DoZip=''
 UrlBase=''
 RemotePath=''
+RtfTest=''
 
 if __name__ == '__main__':
   try:
-    opts, args = getopt.getopt(sys.argv[1:],"u:d:m:az")
+    opts, args = getopt.getopt(sys.argv[1:],"u:d:m:raz")
   except getopt.GetoptError:
     print('-m MDfile path\n')
     print('-a Upload all md files in the directrory')
@@ -292,6 +303,8 @@ if __name__ == '__main__':
         print("ERR -d must have one path")
         final_out(6)
       RemotePath=arg
+    elif opt == '-r':
+      RtfTest = True
 
   if len(MdFile) ==0 :
     print("Must specify the MD file by -m")
@@ -299,7 +312,7 @@ if __name__ == '__main__':
 
   cmdPath=os.path.abspath(os.path.dirname(sys.argv[0]))
   pureName=os.path.splitext(os.path.basename(MdFile))[0]
-  print('CMD file {} RemotePath {} URL {}'.format(MdFile,RemotePath,UrlBase))
+  print('CMD file {} RemotePath {} URL {} Rtf {}'.format(MdFile,RemotePath,UrlBase,RtfTest))
   curDate=datetime.now()
   bkdirname='qiniu_'+pureName+'_'+str(curDate.year)+'_' \
     +str(curDate.month)+'_'+str(curDate.day)+'_'+str(curDate.microsecond)
@@ -341,6 +354,7 @@ if __name__ == '__main__':
       os.mkdir(MdPath)
     except:
       print("ERR create directory failed ",MdPath)
+  
   if len(ak) == 0 or len(sk) == 0 or len(UrlBase) == 0 or len(bucket) == 0:
     print("Config missed AK {} SK {} domain {} bucket {}".format(
       ak,sk,UrlBase,bucket
@@ -349,7 +363,16 @@ if __name__ == '__main__':
   
   print("Copy {} to {}".format(MdFile,MdPath))
   tfile=bkdirname+".md"
+  rtf=bkdirname+'.rtf'
   shutil.copyfile(MdFile,os.path.join(MdPath,tfile))
+  shutil.copyfile(MdFile,os.path.join(MdPath,rtf))
+  if RtfTest :
+    RtfFile=os.path.join(MdPath,rtf)
+    print("Converting to rtf {}".format(RtfFile))
+    convert_md_to_rtf(MdFile,RtfFile)
+    print("Convert done")
+    sys.exit(0)
+
   MdFile=os.path.join(MdPath,tfile)
   print("MD file {}, Remote PATH {}".format(MdFile,RemotePath))
   # print("Config AK {} SK {} domain {} bucket {}".format(
