@@ -6,7 +6,7 @@
 
 &#8195;&#8195;
 
-​ 秉承再造一个轮子的一贯特色，重新造了一个自己用的轮子，用于自动将Markdown文件中的图片自动上传到七牛云并自动替换文件中的图片链接。
+ 秉承再造一个轮子的一贯特色，重新造了一个自己用的轮子，用于自动将Markdown文件中的图片自动上传到七牛云并自动替换文件中的图片链接。
 
 ##   工作流
 
@@ -36,13 +36,34 @@
 
 ### 下载使用
 
-- 下载Release的压缩包，将文件解压到路径
+- 下载项目 git clone  https://github.com/NothingMeaning/foureggs
 
-- 修改AddUploadMdtoContextMenu_pdbolt.reg中的路径为解压路径
+- 下载Release的压缩包，将文件解压到路径 https://github.com/NothingMeaning/foureggs/releases/download/v1.0/markdownuploader-v100.zip
+
+- 修改项目中的AddUploadMdtoContextMenu_pdbolt.reg中的路径为release包的解压路径和exe文件名
 
 - 修改config.ini文件，填写云对应参数
 
 - 点击目标.md文件，执行'Upload to cloud'
+
+- 如果遇到“Windows Windows无法访问指定设备、路径或文件。你可能没有适当的权限访问该项目。”： 尝试将release包挪到C盘，并且修改reg文件
+
+  写法2：
+
+  ```
+  Windows Registry Editor Version 5.00
+  
+  ; Author: by 子午僧@PDBoLT
+  ; Site: www.docdoc.top
+  
+  [HKEY_CLASSES_ROOT\*\shell\MdUpload]
+  @="Upload to cloud"
+  
+  [HKEY_CLASSES_ROOT\*\shell\MdUpload\command]
+  @="C:\\Program Files\\markdownuploader\\markdown.exe -m %1"
+  ```
+
+  
 
 ### 直接源代码使用
 
@@ -51,5 +72,4 @@
 - 程序默认读取同目录下的config.ini文件
 
 - python 1markdownuploader\markdown-upload-pic.py -m d:\test\abc.md
-
 
